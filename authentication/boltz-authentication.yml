@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://github.com/boltz-bio/boltz-api-go (auth.go, client.go, README) and
+  https://boltz.bio/api. Confirmed against the official SDKs.
+description: >-
+  Authentication profile for the Boltz Compute API. Bearer-token auth: either a
+  Boltz API key or an OAuth bearer token in the Authorization header. OAuth
+  callers scope requests to an organization with the X-Boltz-Organization-Id
+  header. API keys carry a mode (test vs live).
+base_url: https://api.boltz.bio
+schemes:
+  - id: bearerAuth
+    type: http
+    scheme: bearer
+    location: header
+    header: Authorization
+    format: 'Authorization: Bearer <token>'
+    credential_types:
+      - api_key   # created via POST /compute/v1/admin/api-keys; has a mode (test|live)
+      - oauth_bearer  # user/OAuth session tokens
+    env_var: BOLTZ_API_KEY
+    notes: >-
+      SDKs default the key from the BOLTZ_API_KEY environment variable. API keys
+      are managed under the Admin API (create/list/revoke).
+supplemental_headers:
+  - name: X-Boltz-Organization-Id
+    purpose: OAuth callers select which organization membership the request runs under.
+identity_endpoint: /compute/v1/auth/me
+key_management:
+  create: POST /compute/v1/admin/api-keys
+  list: GET /compute/v1/admin/api-keys
+  revoke: POST /compute/v1/admin/api-keys/{api_key_id}/revoke
+oauth2: false
+openid_connect: false
+mutual_tls: false
