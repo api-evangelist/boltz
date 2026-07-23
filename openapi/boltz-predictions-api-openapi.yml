@@ -1,0 +1,228 @@
+openapi: 3.1.0
+info:
+  title: Boltz Compute Admin Predictions API
+  version: v1
+  description: Boltz Compute API - biomolecular structure & binding prediction, ADME prediction, and generative small-molecule and protein design as asynchronous compute jobs. Operation surface derived from the official Boltz SDKs (boltz-bio/boltz-api-go); request/response schemas are not published by Boltz and are intentionally left generic.
+  contact:
+    name: Boltz PBC
+    email: contact@boltz.bio
+    url: https://boltz.bio
+  license:
+    name: Proprietary
+    url: https://docs.boltz.bio/terms-of-service/terms-of-service
+servers:
+- url: https://api.boltz.bio
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Predictions
+paths:
+  /compute/v1/predictions/structure-and-binding/{id}:
+    get:
+      operationId: predictionsStructureAndBindingGet
+      summary: Retrieve a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/predictions/structure-and-binding:
+    get:
+      operationId: predictionsStructureAndBindingList
+      summary: List structure & binding predictions
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: predictionsStructureAndBindingStart
+      summary: Start a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/structure-and-binding/{id}/delete-data:
+    post:
+      operationId: predictionsStructureAndBindingDeleteData
+      summary: Delete data for a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/structure-and-binding/estimate-cost:
+    post:
+      operationId: predictionsStructureAndBindingEstimateCost
+      summary: Estimate cost of a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/{id}:
+    get:
+      operationId: predictionsAdmeGet
+      summary: Retrieve an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/predictions/adme:
+    get:
+      operationId: predictionsAdmeList
+      summary: List ADME predictions
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: predictionsAdmeStart
+      summary: Start an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/{id}/delete-data:
+    post:
+      operationId: predictionsAdmeDeleteData
+      summary: Delete data for an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/estimate-cost:
+    post:
+      operationId: predictionsAdmeEstimateCost
+      summary: Estimate cost of an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Boltz API key or OAuth bearer token sent as Authorization: Bearer <token>. OAuth callers use the X-Boltz-Organization-Id header to select an organization.'

@@ -1,0 +1,374 @@
+openapi: 3.1.0
+info:
+  title: Boltz Compute Admin Small Molecule API
+  version: v1
+  description: Boltz Compute API - biomolecular structure & binding prediction, ADME prediction, and generative small-molecule and protein design as asynchronous compute jobs. Operation surface derived from the official Boltz SDKs (boltz-bio/boltz-api-go); request/response schemas are not published by Boltz and are intentionally left generic.
+  contact:
+    name: Boltz PBC
+    email: contact@boltz.bio
+    url: https://boltz.bio
+  license:
+    name: Proprietary
+    url: https://docs.boltz.bio/terms-of-service/terms-of-service
+servers:
+- url: https://api.boltz.bio
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Small Molecule
+paths:
+  /compute/v1/small-molecule/design/{id}:
+    get:
+      operationId: smallMoleculeDesignGet
+      summary: Retrieve a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/design:
+    get:
+      operationId: smallMoleculeDesignList
+      summary: List design jobs
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: smallMoleculeDesignStart
+      summary: Start a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/delete-data:
+    post:
+      operationId: smallMoleculeDesignDeleteData
+      summary: Delete data for a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/estimate-cost:
+    post:
+      operationId: smallMoleculeDesignEstimateCost
+      summary: Estimate cost of a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/results:
+    get:
+      operationId: smallMoleculeDesignListResults
+      summary: List results for a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/design/{id}/resume:
+    post:
+      operationId: smallMoleculeDesignResume
+      summary: Resume a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/stop:
+    post:
+      operationId: smallMoleculeDesignStop
+      summary: Stop a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}:
+    get:
+      operationId: smallMoleculeLibraryScreenGet
+      summary: Retrieve a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/library-screen:
+    get:
+      operationId: smallMoleculeLibraryScreenList
+      summary: List library screens
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: smallMoleculeLibraryScreenStart
+      summary: Start a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/delete-data:
+    post:
+      operationId: smallMoleculeLibraryScreenDeleteData
+      summary: Delete data for a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/estimate-cost:
+    post:
+      operationId: smallMoleculeLibraryScreenEstimateCost
+      summary: Estimate cost of a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/results:
+    get:
+      operationId: smallMoleculeLibraryScreenListResults
+      summary: List results for a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/library-screen/{id}/resume:
+    post:
+      operationId: smallMoleculeLibraryScreenResume
+      summary: Resume a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/stop:
+    post:
+      operationId: smallMoleculeLibraryScreenStop
+      summary: Stop a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Boltz API key or OAuth bearer token sent as Authorization: Bearer <token>. OAuth callers use the X-Boltz-Organization-Id header to select an organization.'
