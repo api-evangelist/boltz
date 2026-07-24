@@ -1,0 +1,57 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/boltz-bio/boltz-api-skills (skills-python/, plugins/)
+description: >-
+  Official Boltz Agent Skills, published in the boltz-bio/boltz-api-skills
+  repository as Claude Code / Codex skills and plugins for the Boltz Compute API.
+  Each skill wraps one marquee compute workflow. Saved as an index (verbatim
+  skills live in the provider repo); grounded in real Boltz API operations.
+repo: https://github.com/boltz-bio/boltz-api-skills
+plugins:
+  - boltz          # model + API workflows
+  - boltz-mcpb     # MCP bundle plugin (see mcp/boltz-mcp.yml)
+  - boltz-api-cli  # CLI plugin (see cli/boltz-cli.yml)
+skills:
+  - name: boltz-structure-and-binding
+    description: Predict 3D structure and binding affinity for a biomolecular complex.
+    api: Boltz Compute API
+    operations:
+      - predictionsStructureAndBindingEstimateCost
+      - predictionsStructureAndBindingStart
+      - predictionsStructureAndBindingGet
+  - name: boltz-small-molecule-design
+    description: Run de-novo small-molecule design against a protein target.
+    api: Boltz Compute API
+    operations:
+      - smallMoleculeDesignEstimateCost
+      - smallMoleculeDesignStart
+      - smallMoleculeDesignListResults
+      - smallMoleculeDesignStop
+  - name: boltz-small-molecule-screen
+    description: Screen a small-molecule library against a target.
+    api: Boltz Compute API
+    operations:
+      - smallMoleculeLibraryScreenEstimateCost
+      - smallMoleculeLibraryScreenStart
+      - smallMoleculeLibraryScreenListResults
+  - name: boltz-protein-design
+    description: Design protein / peptide binders against a target with BoltzGen.
+    api: Boltz Compute API
+    operations:
+      - proteinDesignListCuratedSpecifications
+      - proteinDesignEstimateCost
+      - proteinDesignStart
+      - proteinDesignListResults
+  - name: boltz-protein-screen
+    description: Screen a protein / binder library against a target.
+    api: Boltz Compute API
+    operations:
+      - proteinLibraryScreenEstimateCost
+      - proteinLibraryScreenStart
+      - proteinLibraryScreenListResults
+  - name: boltz-check-status
+    description: Check job progress and the authenticated identity before running work.
+    api: Boltz Compute API
+    operations:
+      - authMe
+      - cliVersion

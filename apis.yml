@@ -1,27 +1,229 @@
 aid: boltz
 name: Boltz
-description: 'Boltz is a company surfaced as a portfolio company of amplify-partners and added to the
-  API Evangelist network as a stub for enrichment. Sector: digital-biology. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Boltz (Boltz PBC) is a public-benefit AI research company building open-source
+  and proprietary foundation models for biomolecular structure prediction,
+  binding-affinity estimation, and generative protein and small-molecule design.
+  Its open-source models (Boltz-1, Boltz-2, BoltzGen, all MIT-licensed) are used
+  by 100,000+ scientists across pharma and biotech, and its commercial platform,
+  Boltz Lab, pairs those models with managed compute and collaborative interfaces.
+  The Boltz Compute API exposes these capabilities as asynchronous jobs -
+  structure & binding prediction, ADME prediction, and small-molecule / protein
+  design and library screening - with official Python, TypeScript, and Go SDKs, a
+  CLI, and an MCP server for agentic drug-discovery workflows. Backed by a $28M
+  seed round led by Amplify Partners, a16z, and Zetta Venture Partners.
 url: https://raw.githubusercontent.com/api-evangelist/boltz/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - amplify-partners
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://boltz.bio/android-chrome-512x512.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Digital Biology
-apis: []
+- Drug Discovery
+- Artificial Intelligence
+- Machine Learning
+- Protein Design
+- Structure Prediction
+- Life Sciences
+- Compute
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: boltz:boltz-admin-api
+  name: Boltz Admin API
+  description: The Admin API from Boltz — 7 operation(s) for admin.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-admin-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-auth-api
+  name: Boltz Auth API
+  description: The Auth API from Boltz — 1 operation(s) for auth.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-auth-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-cli-api
+  name: Boltz CLI API
+  description: The CLI API from Boltz — 1 operation(s) for cli.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - CLI
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-cli-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-predictions-api
+  name: Boltz Predictions API
+  description: The Predictions API from Boltz — 8 operation(s) for predictions.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Predictions
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-predictions-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-protein-api
+  name: Boltz Protein API
+  description: The Protein API from Boltz — 15 operation(s) for protein.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Protein
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-protein-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-share-links-api
+  name: Boltz Share Links API
+  description: The Share Links API from Boltz — 4 operation(s) for share links.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Share Links
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-share-links-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
+- aid: boltz:boltz-small-molecule-api
+  name: Boltz Small Molecule API
+  description: The Small Molecule API from Boltz — 14 operation(s) for small molecule.
+  humanURL: https://api.boltz.bio/docs
+  baseURL: https://api.boltz.bio
+  tags:
+  - Small Molecule
+  properties:
+  - type: OpenAPI
+    url: openapi/boltz-small-molecule-api-openapi.yml
+  - type: APIReference
+    url: https://api.boltz.bio/docs
+  - type: Documentation
+    url: https://docs.boltz.bio
+  - type: Authentication
+    url: authentication/boltz-authentication.yml
 common:
 - type: Website
   url: https://boltz.bio
+- type: DeveloperPortal
+  url: https://docs.boltz.bio
+- type: Documentation
+  url: https://docs.boltz.bio
+- type: APIReference
+  url: https://api.boltz.bio/docs
+- type: GettingStarted
+  url: https://docs.boltz.bio/user-guide/introduction/Quickstart.md
+- type: OpenAPI
+  url: openapi/boltz-compute.yml
+- type: Authentication
+  url: authentication/boltz-authentication.yml
+- type: Packages
+  url: packages/boltz-packages.yml
+- type: SDKs
+  url: packages/boltz-packages.yml
+- type: CLI
+  url: cli/boltz-cli.yml
+- type: MCPServer
+  url: mcp/boltz-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/boltz-llms.txt
+- type: Conventions
+  url: conventions/boltz-conventions.yml
+- type: DataModel
+  url: data-model/boltz-data-model.yml
+- type: ErrorCatalog
+  url: errors/boltz-problem-types.yml
+- type: Conformance
+  url: conformance/boltz-conformance.yml
+- type: Lifecycle
+  url: lifecycle/boltz-lifecycle.yml
+- type: StatusPage
+  url: https://status.boltz.bio
+- type: ChangeLog
+  url: changelog/boltz-changelog.yml
+- type: Sandbox
+  url: sandbox/boltz-sandbox.yml
+- type: DomainSecurity
+  url: security/boltz-domain-security.yml
+- type: Pricing
+  url: https://boltz.bio/pricing
+- type: Blog
+  url: https://boltz.bio/news
+- type: GitHubOrganization
+  url: https://github.com/boltz-bio
+- type: SignUp
+  url: https://lab.boltz.bio
+- type: Support
+  url: https://boltz.bio/join-slack
+- type: TermsOfService
+  url: https://docs.boltz.bio/terms-of-service/terms-of-service.md
+- type: PrivacyPolicy
+  url: https://docs.boltz.bio/privacy-policy/privacy-policy.md
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

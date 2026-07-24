@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/boltz-bio/boltz-api-cli (README, main branch)
+description: >-
+  Official Boltz command-line tool (binary name `boltz-api`) for the Boltz
+  Compute API. Authenticate, submit molecular modeling jobs, and download
+  results from a terminal, script, or coding-agent workflow. Written in Go.
+name: boltz-api
+repo: https://github.com/boltz-bio/boltz-api-cli
+docs: https://api.boltz.bio/docs
+official: true
+install:
+  - method: install script (macOS/Linux)
+    command: curl -fsSL https://install.boltz.bio/boltz-api/install.sh | sh
+  - method: install script (Windows PowerShell)
+    command: irm https://install.boltz.bio/boltz-api/install.ps1 | iex
+  - method: go install
+    command: go install github.com/boltz-bio/boltz-api-cli/cmd/boltz-api@latest
+install_cdn: https://install.boltz.bio/boltz-api
+command_surface:
+  - group: auth
+    purpose: Sign in, inspect the authenticated identity, manage credentials.
+  - group: predictions
+    purpose: Structure-and-binding and ADME prediction jobs.
+  - group: small-molecule
+    purpose: Small-molecule design and library-screen jobs.
+  - group: protein
+    purpose: Protein design and library-screen jobs.
+  - group: share-links
+    purpose: Create and manage shareable result links.
+  - group: results
+    purpose: Download / resume downloading job results.
+key_flows:
+  - Authenticate, then submit a job and poll to completion.
+  - Estimate cost before starting a compute job.
+  - Download results for a completed job to the local filesystem.

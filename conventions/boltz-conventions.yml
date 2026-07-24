@@ -1,0 +1,61 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://github.com/boltz-bio/boltz-api-go (README: Pagination, Retries) and
+  the api.md operation surface. Cross-cutting request/response conventions that
+  apply across the Boltz Compute API rather than any single operation.
+description: >-
+  How the Boltz Compute API behaves across operations: auth style, the
+  asynchronous estimate -> start -> poll -> download job lifecycle, cursor
+  pagination, retry semantics, versioning, and error shape.
+base_url: https://api.boltz.bio
+api_style: REST over HTTPS, JSON requests and responses
+
+authentication:
+  scheme: Bearer token (API key or OAuth) in the Authorization header
+  detail: authentication/boltz-authentication.yml
+
+job_lifecycle:
+  model: asynchronous compute jobs
+  steps:
+    - estimate-cost (POST .../estimate-cost) — preview compute cost before running
+    - start (POST resource) — enqueue the job, returns a job id
+    - poll (GET resource/{id}) — check status
+    - results (GET resource/{id}/results) — page through outputs when complete
+    - control (POST .../stop, .../resume) — pause/continue long-running jobs
+    - cleanup (POST .../delete-data) — delete stored job data
+  note: >-
+    Every compute family (structure-and-binding, adme, small-molecule design &
+    library-screen, protein design & library-screen) follows this same shape.
+
+idempotency:
+  supported: false
+  note: >-
+    The API does not document or implement an Idempotency-Key header. Safe
+    retries rely on job ids and the estimate/start split rather than idempotency
+    keys.
+
+pagination:
+  style: cursor
+  list_endpoints: all collection GETs (predictions, designs, screens, results, usage, workspaces, api-keys)
+  auto_pagination: SDKs expose ListAutoPaging helpers that follow the cursor.
+  response_shape: cursor page (data array + cursor to fetch the next page)
+
+retries:
+  automatic: true
+  default_attempts: 2
+  backoff: short exponential
+  retried_conditions:
+    - connection errors
+    - 408 Request Timeout
+    - 409 Conflict
+    - 429 Rate Limit
+    - '>=500 Internal errors'
+  configurable: WithMaxRetries option in the SDKs
+
+versioning:
+  path_version: v1 (paths under /compute/v1/)
+  detail: lifecycle/boltz-lifecycle.yml
+
+errors:
+  detail: errors/boltz-problem-types.yml

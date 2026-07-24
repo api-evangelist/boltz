@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://github.com/boltz-bio/boltz-api-go (auth.go: API key Mode field),
+  https://docs.boltz.bio (Sandbox workspace docs), and https://boltz.bio/api
+  (free credits for new users). No published static test tokens/fixtures.
+description: >-
+  Test-vs-live surface for the Boltz platform. API keys carry a mode; Boltz Lab
+  exposes a "Sandbox" workspace for rapid one-off predictions. New users get free
+  credits. Boltz publishes no static test cards/tokens (this is a compute API,
+  not a payments API), so none are recorded here.
+key_modes:
+  field: mode
+  values:
+    - test
+    - live
+  note: >-
+    Each API key reports a mode (test | live) via GET /compute/v1/auth/me. Test
+    keys let integrators exercise the API surface separately from live compute.
+sandbox_workspace:
+  name: Sandbox
+  description: >-
+    Boltz Lab's personal workspace for rapid Boltz predictions with constraints
+    (bond/contact/pocket) before committing to full design projects.
+  docs: https://docs.boltz.bio/user-guide/sandbox/Overview.md
+free_credits: New users receive free compute credits (usage-based pricing thereafter).
+spending_controls:
+  workspace_spending_limit:
+    get: GET /compute/v1/admin/workspaces/{workspace_id}/spending-limit
+    set: PUT /compute/v1/admin/workspaces/{workspace_id}/spending-limit
+test_values_published: false

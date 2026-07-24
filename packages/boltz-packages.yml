@@ -1,0 +1,63 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://boltz.bio/api and the boltz-bio GitHub organization
+  (https://github.com/boltz-bio). Registry HTTP status recorded at fetch time.
+description: >-
+  First-party Boltz client libraries. Two families: (1) official Stainless-generated
+  SDKs + CLI for the commercial Boltz Compute API (boltz-bio org), and (2) the
+  open-source model packages for running Boltz-2 / BoltzGen locally (MIT license).
+packages:
+  - language: python
+    registry: pypi
+    name: boltz-api
+    url: https://pypi.org/project/boltz-api/
+    source: https://github.com/boltz-bio/boltz-api-python
+    install: pip install boltz-api
+    version: 0.43.1
+    official: true
+    note: Official Python SDK for the Boltz Compute API (imports as boltz_api).
+  - language: typescript
+    registry: npm
+    name: boltz-api
+    url: https://www.npmjs.com/package/boltz-api
+    source: https://github.com/boltz-bio/boltz-api-typescript
+    install: npm install boltz-api
+    version: 0.53.1
+    official: true
+    note: Official TypeScript/JavaScript SDK for the Boltz Compute API.
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/boltz-bio/boltz-api-go
+    url: https://pkg.go.dev/github.com/boltz-bio/boltz-api-go
+    source: https://github.com/boltz-bio/boltz-api-go
+    install: go get github.com/boltz-bio/boltz-api-go
+    official: true
+    note: Official Go SDK for the Boltz Compute API.
+  - language: go
+    registry: github
+    name: boltz-api (CLI)
+    url: https://github.com/boltz-bio/boltz-api-cli
+    source: https://github.com/boltz-bio/boltz-api-cli
+    install: curl -fsSL https://install.boltz.bio/boltz-api/install.sh | sh
+    official: true
+    note: Official command-line tool. See cli/boltz-cli.yml.
+  - language: python
+    registry: pypi
+    name: boltz
+    url: https://pypi.org/project/boltz/
+    source: https://github.com/jwohlwend/boltz
+    install: pip install boltz
+    official: true
+    note: >-
+      Open-source Boltz-1 / Boltz-2 biomolecular structure & affinity models
+      (MIT). Run predictions locally; distinct from the hosted Compute API.
+  - language: python
+    registry: pypi
+    name: boltzgen
+    url: https://pypi.org/project/boltzgen/
+    source: https://github.com/HannesStark/boltzgen
+    install: pip install boltzgen
+    official: true
+    note: >-
+      Open-source BoltzGen generative protein/peptide design model (MIT).

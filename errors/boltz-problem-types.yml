@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the Boltz Compute API operation surface and the SDK retry policy
+  (github.com/boltz-bio/boltz-api-go README) plus the bearer-auth model. Boltz
+  does not publish a dedicated error reference; HTTP status semantics only.
+description: >-
+  HTTP error conditions the Boltz Compute API returns. Format is standard HTTP
+  status codes with JSON error bodies (the API is a Fastify service returning
+  {message,error,statusCode}); no RFC 9457 problem+json media type observed.
+format: http-status
+envelope_fields:
+  - message
+  - error
+  - statusCode
+problem_types:
+  - status: 401
+    title: Unauthorized
+    meaning: Missing or invalid bearer token (API key or OAuth token).
+    remediation: Provide a valid Authorization Bearer token; check BOLTZ_API_KEY.
+  - status: 403
+    title: Forbidden
+    meaning: Authenticated but not permitted for the workspace/organization or resource.
+    remediation: Verify X-Boltz-Organization-Id and workspace permissions.
+  - status: 404
+    title: Not Found
+    meaning: Unknown route or job id.
+    remediation: Check the path and the resource id.
+  - status: 408
+    title: Request Timeout
+    meaning: The request timed out; automatically retried by the SDKs.
+    remediation: Retry with backoff (SDKs retry twice by default).
+  - status: 409
+    title: Conflict
+    meaning: Conflicting state (e.g. acting on a job in an incompatible state); retryable.
+    remediation: Re-fetch job state and retry.
+  - status: 429
+    title: Too Many Requests
+    meaning: Rate limit exceeded; automatically retried by the SDKs.
+    remediation: Back off and retry; reduce request rate.
+  - status: 500
+    title: Internal Server Error
+    meaning: Server-side failure; automatically retried by the SDKs.
+    remediation: Retry with backoff; contact contact@boltz.bio if persistent.

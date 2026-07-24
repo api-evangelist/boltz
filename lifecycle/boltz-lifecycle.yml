@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://status.boltz.bio (hosted status page), the /compute/v1 path version,
+  and the Stainless SDK release stream (release-please). No public deprecation
+  policy or Sunset/Deprecation header usage was found.
+description: >-
+  Versioning, status, and support lifecycle for the Boltz Compute API.
+versioning:
+  strategy: URI path version
+  current: v1
+  base_path: /compute/v1
+status_page:
+  url: https://status.boltz.bio
+  type: hosted status page
+deprecation:
+  policy_published: false
+  sunset_header: not observed
+  note: No public deprecation/sunset policy located as of this pass.
+sla:
+  published: false
+release_stream:
+  sdks: release-please (semver) across boltz-api-python / -typescript / -go / -cli
+support:
+  community: https://boltz.bio/join-slack
+  email: contact@boltz.bio

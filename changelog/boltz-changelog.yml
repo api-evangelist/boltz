@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://boltz.bio/news and https://boltz.bio/llms.txt (dated announcements).
+  Boltz does not publish a per-endpoint API changelog; the SDKs version via
+  release-please (semver). Recent product/platform milestones recorded here.
+description: >-
+  Recent Boltz product and platform milestones. Scheme is dated announcements;
+  the API itself is at path version v1. SDK releases follow semver.
+scheme: dated-announcements
+api_version: v1
+sdk_versioning: semver (release-please)
+news_url: https://boltz.bio/news
+entries:
+  - date: '2026-01'
+    title: Announcing Boltz PBC
+    highlights: Founding of Boltz PBC with a $28M seed round (Amplify, a16z, Zetta).
+    url: https://boltz.bio/launch
+  - date: '2026-01'
+    title: Boltz Lab launch
+    highlights: >-
+      Commercial platform launch with the first agents for small-molecule and
+      protein design, managed compute, and collaborative interfaces.
+    url: https://boltz.bio/boltzlab
+  - date: '2026-01'
+    title: Pfizer partnership
+    highlights: Strategic collaboration with Pfizer for custom foundation models.
+    url: https://boltz.bio/pfizer-partnership

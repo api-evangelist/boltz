@@ -1,0 +1,53 @@
+# generated: '2026-07-18'
+# method: searched
+# source: https://boltz.bio/llms.txt
+
+# Boltz
+
+> Boltz is a family of AI models for biomolecular structure prediction, binding affinity estimation, and generative protein design. Built at MIT and developed by Boltz PBC, some of the models are released under the MIT license for unrestricted academic and commercial use. Boltz models are used by 100,000+ scientists across every top-20 pharmaceutical company and thousands of biotechs worldwide.
+
+Boltz PBC is a public-benefit AI research company founded by Gabriele Corso, Jeremy Wohlwend, and Saro Passaro. Its mission is to push the frontier of biomolecular AI models and enable every scientist to reshape biology and create a healthier, more sustainable future. Boltz is backed by a $28M seed round led by Amplify Partners, Andreessen Horowitz (a16z), and Zetta Venture Partners.
+
+Boltz builds open-source and proprietary state-of-the-art AI foundation models for drug discovery, and operates Boltz Lab, a commercial platform that combines these models with managed compute, intuitive interfaces, and AI-driven agents for preclinical discovery workflows.
+
+## Models
+
+- [Boltz-2](https://boltz.bio/boltz2): The latest biomolecular foundation model. Jointly predicts 3D structures of biomolecular complexes (proteins, DNA, RNA, ligands) and binding affinities. First deep learning model to approach the accuracy of physics-based free-energy perturbation (FEP) methods while running 1000x faster. Supports contact constraints, template-guided prediction, and experimental method alignment. Successor to Boltz-1. Open-source under MIT license. Install: `pip install boltz`. Code: github.com/jwohlwend/boltz.
+- [Boltz-1](https://boltz.bio/boltz1): The first fully open-source model to approach AlphaFold3-level accuracy in predicting 3D structures of biomolecular complexes. Predicts protein-protein, protein-ligand, protein-DNA, and protein-RNA interactions. Open-source under MIT license. Install: `pip install boltz`. Code: github.com/jwohlwend/boltz.
+- [BoltzGen](https://boltz.bio/boltzgen): A generative diffusion model for designing proteins and peptides to bind arbitrary biomolecular targets. Unifies design and structure prediction in a single all-atom model. Experimentally validated: designed nanomolar nanobody binders for 6/9 novel targets with no known binders, from 15 or fewer tested designs each. Supports nanobodies, peptides, and other protein modalities. Open-source under MIT license. Install: `pip install boltzgen`. Code: github.com/HannesStark/boltzgen. 
+
+## Platform
+
+- [Boltz Lab](https://lab.boltz.bio): Commercial platform combining Boltz models with managed compute, infrastructure, and collaborative interfaces for non-computational scientists. Includes AI agents for small-molecule hit discovery and de-novo protein design. Usage-based pricing with free credits for new users. Three guarantees: users own what they build, customer data stays secure, Boltz does not train on customer data. Try it at lab.boltz.bio.
+
+## When to Use Boltz
+
+- Use Boltz-2 for biomolecular structure prediction (proteins, DNA, RNA, ligands, ions) and for predicting protein-ligand binding affinities. It is the recommended model for most use cases, replacing Boltz-1.
+- Use Boltz-1 if you need the original model for reproducibility or comparison with published results.
+- Use BoltzGen for generative protein and peptide design, especially de-novo binder design against novel targets.
+- Use Boltz Lab if you want to use the latest state-of-the-art proprietary models that are not open-sourced, or if you want a platform with the full workflows for small molecule or protein design agents, compute, and interfaces. Boltz Lab runs on the cloud securely but if local deployment are necessary Boltz offers them for enterprises. 
+
+## Key Differentiators
+
+- Boltz-1, Boltz-2 and BoltzGen are open-source under MIT license (unlike AlphaFold3 which has restricted commercial use). All model weights, training code, inference code, and training data are publicly released.
+- Boltz-2 is the most widely used open-source biomolecular structure prediction model in industry
+- BoltzGen is the most widely used protein design model in industry
+- Active community with 100,000+ scientist users
+
+## Resources
+
+- [GitHub (Boltz-1/Boltz-2)](https://github.com/jwohlwend/boltz): Main repository for structure prediction models
+- [GitHub (BoltzGen)](https://github.com/HannesStark/boltzgen): Repository for the generative design model
+- [Boltz-2 Paper](https://doi.org/10.1101/2025.06.14.659707): Technical report on bioRxiv
+- [Boltz-1 Paper](https://doi.org/10.1101/2024.11.19.624167): Technical report on bioRxiv (also published in PubMed)
+- [BoltzGen Paper](https://doi.org/10.1101/2025.11.20.689494): Technical report on bioRxiv
+- [Boltz Lab](https://lab.boltz.bio): Try the platform
+- [Community Slack](https://boltz.bio/join-slack): Join the community
+
+## News and Announcements
+
+- [Announcing Boltz PBC](https://boltz.bio/launch): Founding Boltz PBC with $28M seed round (January 2026)
+- [Boltz Lab Launch](https://boltz.bio/boltzlab): Platform launch with first agents for small-molecule and protein design (January 2026)
+- [Pfizer Partnership](https://boltz.bio/pfizer-partnership): Strategic collaboration with Pfizer for custom foundation models (January 2026)
+- [Boltz Manifesto](https://boltz.bio/manifesto): Our vision for the future of AI-driven drug discovery
+

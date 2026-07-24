@@ -1,0 +1,1301 @@
+# generated: '2026-07-18'
+# method: generated
+# source: https://github.com/boltz-bio/boltz-api-go api.md (60 operations); provider does not publish schemas
+openapi: 3.1.0
+info:
+  title: Boltz Compute API
+  version: v1
+  description: Boltz Compute API - biomolecular structure & binding prediction, ADME prediction, and generative small-molecule
+    and protein design as asynchronous compute jobs. Operation surface derived from the official Boltz SDKs (boltz-bio/boltz-api-go);
+    request/response schemas are not published by Boltz and are intentionally left generic.
+  contact:
+    name: Boltz PBC
+    email: contact@boltz.bio
+    url: https://boltz.bio
+  license:
+    name: Proprietary
+    url: https://docs.boltz.bio/terms-of-service/terms-of-service
+servers:
+- url: https://api.boltz.bio
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Predictions
+- name: Small Molecule
+- name: Protein
+- name: Share Links
+- name: Admin
+- name: CLI
+- name: Auth
+paths:
+  /compute/v1/predictions/structure-and-binding/{id}:
+    get:
+      operationId: predictionsStructureAndBindingGet
+      summary: Retrieve a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/predictions/structure-and-binding:
+    get:
+      operationId: predictionsStructureAndBindingList
+      summary: List structure & binding predictions
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: predictionsStructureAndBindingStart
+      summary: Start a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/structure-and-binding/{id}/delete-data:
+    post:
+      operationId: predictionsStructureAndBindingDeleteData
+      summary: Delete data for a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/structure-and-binding/estimate-cost:
+    post:
+      operationId: predictionsStructureAndBindingEstimateCost
+      summary: Estimate cost of a structure & binding prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/{id}:
+    get:
+      operationId: predictionsAdmeGet
+      summary: Retrieve an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/predictions/adme:
+    get:
+      operationId: predictionsAdmeList
+      summary: List ADME predictions
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: predictionsAdmeStart
+      summary: Start an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/{id}/delete-data:
+    post:
+      operationId: predictionsAdmeDeleteData
+      summary: Delete data for an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/predictions/adme/estimate-cost:
+    post:
+      operationId: predictionsAdmeEstimateCost
+      summary: Estimate cost of an ADME prediction
+      tags:
+      - Predictions
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}:
+    get:
+      operationId: smallMoleculeDesignGet
+      summary: Retrieve a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/design:
+    get:
+      operationId: smallMoleculeDesignList
+      summary: List design jobs
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: smallMoleculeDesignStart
+      summary: Start a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/delete-data:
+    post:
+      operationId: smallMoleculeDesignDeleteData
+      summary: Delete data for a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/estimate-cost:
+    post:
+      operationId: smallMoleculeDesignEstimateCost
+      summary: Estimate cost of a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/results:
+    get:
+      operationId: smallMoleculeDesignListResults
+      summary: List results for a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/design/{id}/resume:
+    post:
+      operationId: smallMoleculeDesignResume
+      summary: Resume a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/design/{id}/stop:
+    post:
+      operationId: smallMoleculeDesignStop
+      summary: Stop a design job
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}:
+    get:
+      operationId: smallMoleculeLibraryScreenGet
+      summary: Retrieve a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/library-screen:
+    get:
+      operationId: smallMoleculeLibraryScreenList
+      summary: List library screens
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: smallMoleculeLibraryScreenStart
+      summary: Start a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/delete-data:
+    post:
+      operationId: smallMoleculeLibraryScreenDeleteData
+      summary: Delete data for a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/estimate-cost:
+    post:
+      operationId: smallMoleculeLibraryScreenEstimateCost
+      summary: Estimate cost of a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/results:
+    get:
+      operationId: smallMoleculeLibraryScreenListResults
+      summary: List results for a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/small-molecule/library-screen/{id}/resume:
+    post:
+      operationId: smallMoleculeLibraryScreenResume
+      summary: Resume a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/small-molecule/library-screen/{id}/stop:
+    post:
+      operationId: smallMoleculeLibraryScreenStop
+      summary: Stop a library screen
+      tags:
+      - Small Molecule
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/design/{id}:
+    get:
+      operationId: proteinDesignGet
+      summary: Retrieve a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/protein/design:
+    get:
+      operationId: proteinDesignList
+      summary: List design jobs
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: proteinDesignStart
+      summary: Start a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/design/{id}/delete-data:
+    post:
+      operationId: proteinDesignDeleteData
+      summary: Delete data for a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/design/estimate-cost:
+    post:
+      operationId: proteinDesignEstimateCost
+      summary: Estimate cost of a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/design/curated-specifications:
+    get:
+      operationId: proteinDesignListCuratedSpecifications
+      summary: List curated protein design specifications
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+  /compute/v1/protein/design/{id}/results:
+    get:
+      operationId: proteinDesignListResults
+      summary: List results for a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/protein/design/{id}/resume:
+    post:
+      operationId: proteinDesignResume
+      summary: Resume a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/design/{id}/stop:
+    post:
+      operationId: proteinDesignStop
+      summary: Stop a design job
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/library-screen/{id}:
+    get:
+      operationId: proteinLibraryScreenGet
+      summary: Retrieve a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/protein/library-screen:
+    get:
+      operationId: proteinLibraryScreenList
+      summary: List library screens
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+    post:
+      operationId: proteinLibraryScreenStart
+      summary: Start a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/library-screen/{id}/delete-data:
+    post:
+      operationId: proteinLibraryScreenDeleteData
+      summary: Delete data for a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/library-screen/estimate-cost:
+    post:
+      operationId: proteinLibraryScreenEstimateCost
+      summary: Estimate cost of a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/library-screen/{id}/results:
+    get:
+      operationId: proteinLibraryScreenListResults
+      summary: List results for a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/protein/library-screen/{id}/resume:
+    post:
+      operationId: proteinLibraryScreenResume
+      summary: Resume a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/protein/library-screen/{id}/stop:
+    post:
+      operationId: proteinLibraryScreenStop
+      summary: Stop a library screen
+      tags:
+      - Protein
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/share-links:
+    post:
+      operationId: shareLinksNew
+      summary: Create a share link
+      tags:
+      - Share Links
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/share-links/{id}:
+    get:
+      operationId: shareLinksGet
+      summary: Retrieve a share link
+      tags:
+      - Share Links
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/share-links/{id}/archive:
+    post:
+      operationId: shareLinksArchive
+      summary: Archive a share link
+      tags:
+      - Share Links
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/share/{id}/pipelines/{pipelineId}/results:
+    get:
+      operationId: shareLinksListPipelineResults
+      summary: List shared pipeline results
+      tags:
+      - Share Links
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pipelineId
+        in: path
+        required: true
+        schema:
+          type: string
+  /compute/v1/admin/workspaces:
+    post:
+      operationId: adminWorkspacesNew
+      summary: Create a workspace
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      operationId: adminWorkspacesList
+      summary: List workspaces
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+  /compute/v1/admin/workspaces/{workspace_id}:
+    get:
+      operationId: adminWorkspacesGet
+      summary: Retrieve a workspace
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: workspace_id
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: adminWorkspacesUpdate
+      summary: Update a workspace
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: workspace_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/admin/workspaces/{workspace_id}/archive:
+    post:
+      operationId: adminWorkspacesArchive
+      summary: Archive a workspace
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: workspace_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/admin/workspaces/{workspace_id}/spending-limit:
+    get:
+      operationId: adminWorkspacesGetSpendingLimit
+      summary: Get workspace spending limit
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: workspace_id
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: adminWorkspacesSetSpendingLimit
+      summary: Set workspace spending limit
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: workspace_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/admin/api-keys:
+    post:
+      operationId: adminAPIKeysNew
+      summary: Create an API key
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      operationId: adminAPIKeysList
+      summary: List API keys
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+  /compute/v1/admin/api-keys/{api_key_id}/revoke:
+    post:
+      operationId: adminAPIKeysRevoke
+      summary: Revoke an API key
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+      parameters:
+      - name: api_key_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /compute/v1/admin/usage:
+    get:
+      operationId: adminUsageList
+      summary: List usage records
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+  /compute/v1/cli/version:
+    get:
+      operationId: cliVersion
+      summary: Get minimum supported CLI version
+      tags:
+      - CLI
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+  /compute/v1/auth/me:
+    get:
+      operationId: authMe
+      summary: Get the authenticated identity
+      tags:
+      - Auth
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+        '429':
+          description: Rate limited
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Boltz API key or OAuth bearer token sent as Authorization: Bearer <token>. OAuth callers use the X-Boltz-Organization-Id
+        header to select an organization.'

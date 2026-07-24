@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the Boltz Compute API surface + SDK behavior
+  (github.com/boltz-bio/boltz-api-go) and authentication/boltz-authentication.yml.
+  Boltz publishes no formal compliance/certification program, so this asserts
+  only cross-cutting technical standards, not audited compliance.
+description: >-
+  Cross-cutting standards conformance for the Boltz Compute API. Each entry
+  states whether the API conforms and the evidence.
+standards:
+  - id: oauth2-bearer
+    conforms: true
+    evidence: >-
+      Bearer-token authentication in the Authorization header, supporting OAuth
+      bearer tokens and API keys with organization selection via
+      X-Boltz-Organization-Id.
+  - id: cursor-pagination
+    conforms: true
+    evidence: >-
+      All list endpoints return cursor pages; SDKs expose ListAutoPaging helpers.
+  - id: rest-json
+    conforms: true
+    evidence: REST over HTTPS with JSON request/response bodies.
+  - id: rfc9457-problem-json
+    conforms: false
+    evidence: >-
+      Errors are HTTP status codes with a {message,error,statusCode} JSON body;
+      no application/problem+json media type observed.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key header documented or implemented.
+  - id: fhir
+    conforms: false
+    evidence: Not a clinical/health-records API; FHIR is not applicable.

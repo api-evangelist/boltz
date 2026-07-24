@@ -1,0 +1,26 @@
+{
+  "provider": "boltz",
+  "sources": [
+    "boltz-admin-api-openapi.yml",
+    "boltz-auth-api-openapi.yml",
+    "boltz-cli-api-openapi.yml",
+    "boltz-predictions-api-openapi.yml",
+    "boltz-protein-api-openapi.yml",
+    "boltz-share-links-api-openapi.yml",
+    "boltz-small-molecule-api-openapi.yml"
+  ],
+  "outputs": [
+    "boltz-admin-api-openapi.yml",
+    "boltz-auth-api-openapi.yml",
+    "boltz-cli-api-openapi.yml",
+    "boltz-predictions-api-openapi.yml",
+    "boltz-protein-api-openapi.yml",
+    "boltz-share-links-api-openapi.yml",
+    "boltz-small-molecule-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

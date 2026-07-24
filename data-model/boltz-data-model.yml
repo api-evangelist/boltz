@@ -1,0 +1,83 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  Derived from the Boltz Compute API operation surface
+  (github.com/boltz-bio/boltz-api-go api.md, 60 operations).
+description: >-
+  Entity-relationship view of the Boltz Compute API. The core entity is a
+  compute Job specialized into five families (structure-and-binding, ADME,
+  small-molecule design, small-molecule library-screen, protein design, protein
+  library-screen); jobs produce Results, can be shared via ShareLinks, and are
+  billed against Workspaces under an Organization.
+entities:
+  - name: Workspace
+    id_field: workspace_id
+    operations: [adminWorkspacesNew, adminWorkspacesGet, adminWorkspacesUpdate, adminWorkspacesList, adminWorkspacesArchive]
+  - name: APIKey
+    id_field: api_key_id
+    attributes: [mode]
+    operations: [adminAPIKeysNew, adminAPIKeysList, adminAPIKeysRevoke]
+  - name: SpendingLimit
+    operations: [adminWorkspacesGetSpendingLimit, adminWorkspacesSetSpendingLimit]
+  - name: UsageRecord
+    operations: [adminUsageList]
+  - name: StructureAndBindingJob
+    id_field: id
+    operations: [predictionsStructureAndBindingStart, predictionsStructureAndBindingGet, predictionsStructureAndBindingList, predictionsStructureAndBindingEstimateCost, predictionsStructureAndBindingDeleteData]
+  - name: AdmeJob
+    id_field: id
+    operations: [predictionsAdmeStart, predictionsAdmeGet, predictionsAdmeList, predictionsAdmeEstimateCost, predictionsAdmeDeleteData]
+  - name: SmallMoleculeDesignJob
+    id_field: id
+    operations: [smallMoleculeDesignStart, smallMoleculeDesignGet, smallMoleculeDesignList, smallMoleculeDesignEstimateCost, smallMoleculeDesignListResults, smallMoleculeDesignResume, smallMoleculeDesignStop, smallMoleculeDesignDeleteData]
+  - name: SmallMoleculeLibraryScreenJob
+    id_field: id
+    operations: [smallMoleculeLibraryScreenStart, smallMoleculeLibraryScreenGet, smallMoleculeLibraryScreenList, smallMoleculeLibraryScreenEstimateCost, smallMoleculeLibraryScreenListResults, smallMoleculeLibraryScreenResume, smallMoleculeLibraryScreenStop, smallMoleculeLibraryScreenDeleteData]
+  - name: ProteinDesignJob
+    id_field: id
+    operations: [proteinDesignStart, proteinDesignGet, proteinDesignList, proteinDesignEstimateCost, proteinDesignListResults, proteinDesignResume, proteinDesignStop, proteinDesignDeleteData, proteinDesignListCuratedSpecifications]
+  - name: ProteinLibraryScreenJob
+    id_field: id
+    operations: [proteinLibraryScreenStart, proteinLibraryScreenGet, proteinLibraryScreenList, proteinLibraryScreenEstimateCost, proteinLibraryScreenListResults, proteinLibraryScreenResume, proteinLibraryScreenStop, proteinLibraryScreenDeleteData]
+  - name: JobResult
+    note: Paged output of a completed job.
+    operations: [smallMoleculeDesignListResults, proteinDesignListResults, shareLinksListPipelineResults]
+  - name: ShareLink
+    id_field: id
+    operations: [shareLinksNew, shareLinksGet, shareLinksArchive, shareLinksListPipelineResults]
+  - name: Identity
+    operations: [authMe]
+relationships:
+  - from: APIKey
+    type: belongs_to
+    to: Workspace
+  - from: SpendingLimit
+    type: belongs_to
+    to: Workspace
+    via: workspace_id
+  - from: UsageRecord
+    type: belongs_to
+    to: Workspace
+  - from: StructureAndBindingJob
+    type: has_many
+    to: JobResult
+  - from: SmallMoleculeDesignJob
+    type: has_many
+    to: JobResult
+    via: id
+  - from: SmallMoleculeLibraryScreenJob
+    type: has_many
+    to: JobResult
+    via: id
+  - from: ProteinDesignJob
+    type: has_many
+    to: JobResult
+    via: id
+  - from: ProteinLibraryScreenJob
+    type: has_many
+    to: JobResult
+    via: id
+  - from: ShareLink
+    type: has_many
+    to: JobResult
+    via: pipelineId
