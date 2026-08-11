@@ -175,7 +175,7 @@ common:
 - type: GettingStarted
   url: https://docs.boltz.bio/user-guide/introduction/Quickstart.md
 - type: OpenAPI
-  url: openapi/boltz-compute.yml
+  url: openapi/_original/boltz-compute.yml
 - type: Authentication
   url: authentication/boltz-authentication.yml
 - type: Packages
