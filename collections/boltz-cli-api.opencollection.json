@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin CLI API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CLI",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get minimum supported CLI version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/cli/version"
+          },
+          "docs": "Get minimum supported CLI version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

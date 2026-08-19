@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin Share Links API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Share Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a share link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/share-links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a share link"
+        },
+        {
+          "info": {
+            "name": "Retrieve a share link",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/share-links/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a share link"
+        },
+        {
+          "info": {
+            "name": "Archive a share link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/share-links/:id/archive",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive a share link"
+        },
+        {
+          "info": {
+            "name": "List shared pipeline results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/share/:id/pipelines/:pipelineId/results",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pipelineId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List shared pipeline results"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

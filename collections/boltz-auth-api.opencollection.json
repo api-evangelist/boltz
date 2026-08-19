@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin Auth API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the authenticated identity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/auth/me"
+          },
+          "docs": "Get the authenticated identity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workspaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces"
+          },
+          "docs": "List workspaces"
+        },
+        {
+          "info": {
+            "name": "Create a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a workspace"
+        },
+        {
+          "info": {
+            "name": "Retrieve a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces/:workspace_id",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a workspace"
+        },
+        {
+          "info": {
+            "name": "Update a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces/:workspace_id",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a workspace"
+        },
+        {
+          "info": {
+            "name": "Archive a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces/:workspace_id/archive",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive a workspace"
+        },
+        {
+          "info": {
+            "name": "Get workspace spending limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces/:workspace_id/spending-limit",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get workspace spending limit"
+        },
+        {
+          "info": {
+            "name": "Set workspace spending limit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.boltz.bio/compute/v1/admin/workspaces/:workspace_id/spending-limit",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Set workspace spending limit"
+        },
+        {
+          "info": {
+            "name": "List API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/admin/api-keys"
+          },
+          "docs": "List API keys"
+        },
+        {
+          "info": {
+            "name": "Create an API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/admin/api-keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an API key"
+        },
+        {
+          "info": {
+            "name": "Revoke an API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/admin/api-keys/:api_key_id/revoke",
+            "params": [
+              {
+                "name": "api_key_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke an API key"
+        },
+        {
+          "info": {
+            "name": "List usage records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/admin/usage"
+          },
+          "docs": "List usage records"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

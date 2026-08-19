@@ -1,0 +1,186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin Predictions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Predictions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a structure & binding prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/predictions/structure-and-binding/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a structure & binding prediction"
+        },
+        {
+          "info": {
+            "name": "List structure & binding predictions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/predictions/structure-and-binding"
+          },
+          "docs": "List structure & binding predictions"
+        },
+        {
+          "info": {
+            "name": "Start a structure & binding prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/structure-and-binding",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a structure & binding prediction"
+        },
+        {
+          "info": {
+            "name": "Delete data for a structure & binding prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/structure-and-binding/:id/delete-data",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete data for a structure & binding prediction"
+        },
+        {
+          "info": {
+            "name": "Estimate cost of a structure & binding prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/structure-and-binding/estimate-cost",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate cost of a structure & binding prediction"
+        },
+        {
+          "info": {
+            "name": "Retrieve an ADME prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/predictions/adme/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an ADME prediction"
+        },
+        {
+          "info": {
+            "name": "List ADME predictions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/predictions/adme"
+          },
+          "docs": "List ADME predictions"
+        },
+        {
+          "info": {
+            "name": "Start an ADME prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/adme",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start an ADME prediction"
+        },
+        {
+          "info": {
+            "name": "Delete data for an ADME prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/adme/:id/delete-data",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete data for an ADME prediction"
+        },
+        {
+          "info": {
+            "name": "Estimate cost of an ADME prediction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/predictions/adme/estimate-cost",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate cost of an ADME prediction"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

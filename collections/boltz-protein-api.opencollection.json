@@ -1,0 +1,321 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Boltz Compute Admin Protein API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Protein",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a design job"
+        },
+        {
+          "info": {
+            "name": "List design jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/design"
+          },
+          "docs": "List design jobs"
+        },
+        {
+          "info": {
+            "name": "Start a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/design",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a design job"
+        },
+        {
+          "info": {
+            "name": "Delete data for a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/:id/delete-data",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete data for a design job"
+        },
+        {
+          "info": {
+            "name": "Estimate cost of a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/estimate-cost",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate cost of a design job"
+        },
+        {
+          "info": {
+            "name": "List curated protein design specifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/curated-specifications"
+          },
+          "docs": "List curated protein design specifications"
+        },
+        {
+          "info": {
+            "name": "List results for a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/:id/results",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List results for a design job"
+        },
+        {
+          "info": {
+            "name": "Resume a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/:id/resume",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Resume a design job"
+        },
+        {
+          "info": {
+            "name": "Stop a design job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/design/:id/stop",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stop a design job"
+        },
+        {
+          "info": {
+            "name": "Retrieve a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a library screen"
+        },
+        {
+          "info": {
+            "name": "List library screens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen"
+          },
+          "docs": "List library screens"
+        },
+        {
+          "info": {
+            "name": "Start a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a library screen"
+        },
+        {
+          "info": {
+            "name": "Delete data for a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/:id/delete-data",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete data for a library screen"
+        },
+        {
+          "info": {
+            "name": "Estimate cost of a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/estimate-cost",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate cost of a library screen"
+        },
+        {
+          "info": {
+            "name": "List results for a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/:id/results",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List results for a library screen"
+        },
+        {
+          "info": {
+            "name": "Resume a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/:id/resume",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Resume a library screen"
+        },
+        {
+          "info": {
+            "name": "Stop a library screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.boltz.bio/compute/v1/protein/library-screen/:id/stop",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stop a library screen"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
