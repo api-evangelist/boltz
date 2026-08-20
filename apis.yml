@@ -40,6 +40,16 @@ tags:
 - Digital Biology
 - Drug Discovery
 - Artificial Intelligence
+- Machine-Learning
+- Protein Design
+- Structure Prediction
+- Life Sciences
+- Compute
+tags_raw:
+- Company
+- Digital Biology
+- Drug Discovery
+- Artificial Intelligence
 - Machine Learning
 - Protein Design
 - Structure Prediction
@@ -73,6 +83,8 @@ apis:
   humanURL: https://api.boltz.bio/docs
   baseURL: https://api.boltz.bio
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
