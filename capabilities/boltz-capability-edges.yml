@@ -1,0 +1,46 @@
+slug: boltz
+provider: Boltz
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Pharmaceuticals & Life Sciences
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Predictions
+  spec_file: boltz-predictions-api-openapi.yml
+  capability_id: BC-1500
+  capability_id_l1: BC-1500
+  capability_name: Drug Discovery Management
+  confidence: 0.75
+  evidence: POST /compute/v1/predictions/structure-and-binding  Start a structure & binding prediction;
+    GET /compute/v1/predictions/adme
+  reason: Biomolecular structure/binding-affinity and ADME prediction jobs are computational drug discovery
+    work (target/lead assessment, ADME profiling). L1 Drug Discovery Management; sub-capability ambiguous
+    between hit discovery, lead optimisation and pre-clinical ADME.
+- tag: Protein
+  spec_file: boltz-protein-api-openapi.yml
+  capability_id: BC-1500
+  capability_id_l1: BC-1500
+  capability_name: Drug Discovery Management
+  confidence: 0.7
+  evidence: POST /compute/v1/protein/design  proteinDesignStart  Start a design job; GET /compute/v1/protein/library-screen  List
+    library screens
+  reason: Generative protein design and library screening are hit discovery / lead optimisation activities
+    in drug discovery. L1 confident; specific L2 ambiguous between BC-1500.20 and BC-1500.30.
+- tag: Small Molecule
+  spec_file: boltz-small-molecule-api-openapi.yml
+  capability_id: BC-1500
+  capability_id_l1: BC-1500
+  capability_name: Drug Discovery Management
+  confidence: 0.7
+  evidence: POST /compute/v1/small-molecule/design  smallMoleculeDesignStart  Start a design job; POST
+    /compute/v1/small-molecule/library-screen
+  reason: Generative small-molecule design and virtual library screening map to drug discovery hit identification/lead
+    optimisation; exact L2 ambiguous.

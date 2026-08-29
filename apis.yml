@@ -188,6 +188,9 @@ apis:
   - type: Authentication
     url: authentication/boltz-authentication.yml
 common:
+- type: CapabilityMap
+  url: capabilities/boltz-capability-edges.yml
+  name: Boltz Business Capability Map
 - type: Website
   url: https://boltz.bio
 - type: DeveloperPortal
