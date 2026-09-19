@@ -147,6 +147,8 @@ apis:
   humanURL: https://api.boltz.bio/docs
   baseURL: https://api.boltz.bio
   tags:
+  - Proteins
+  tags_raw:
   - Protein
   properties:
   - type: OpenAPI
