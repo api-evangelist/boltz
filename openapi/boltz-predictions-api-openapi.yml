@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Boltz Compute Admin Predictions API
+  title: Boltz Compute Predictions API
   version: v1
   description: Boltz Compute API - biomolecular structure & binding prediction, ADME prediction, and generative small-molecule and protein design as asynchronous compute jobs. Operation surface derived from the official Boltz SDKs (boltz-bio/boltz-api-go); request/response schemas are not published by Boltz and are intentionally left generic.
   contact:
