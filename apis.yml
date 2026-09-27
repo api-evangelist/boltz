@@ -58,7 +58,7 @@ tags:
 - Digital Biology
 - Drug Discovery
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Protein Design
 - Structure Prediction
 - Life Sciences
@@ -73,6 +73,7 @@ tags_raw:
 - Structure Prediction
 - Life Sciences
 - Compute
+- Machine-Learning
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
