@@ -1,0 +1,107 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://boltz.com/pricing
+sources:
+- https://boltz.com/pricing
+- https://boltz.bio/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Single tenant or private cloud deployment options
+  managed_tier: Professional
+published: true
+note: Free-subscription plan with per-prediction inference pricing by crop size; Enterprise is custom
+  with private/single-tenant deployment options.
+plan_count: 13
+currency: USD
+plans:
+- name: Professional
+  price_text: $0 subscription
+  price: 0
+  currency: USD
+  period: month
+  unit: subscription
+  included_quota: Up to 200 free predictions every month
+  overage: Usage-based pricing (see below)
+- name: Enterprise
+  price_text: Custom pricing
+  period: none
+  included_quota: Finetuning and customization with private data; single tenant or private cloud deployment;
+    unlimited parallel GPU capacity
+- name: Small-molecule pipeline (design + structure + affinity + admet)
+  price_text: $0.025
+  price: 0.025
+  currency: USD
+  period: per-use
+  unit: per molecule
+- name: Protein design pipeline 0–256
+  price_text: $0.025
+  price: 0.025
+  currency: USD
+  period: per-use
+  unit: crop size 0–256
+- name: Protein design pipeline 257–512
+  price_text: $0.05
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: crop size 257–512
+- name: Protein design pipeline 513–1024
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: crop size 513–1024
+- name: Protein design pipeline 1025–2048
+  price_text: $0.20
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: crop size 1025–2048
+- name: Protein design pipeline 2049+
+  price_text: $0.40
+  price: 0.4
+  currency: USD
+  period: per-use
+  unit: crop size 2049+
+- name: Sandbox (MSA + structure + affinity) 0–256
+  price_text: $0.025
+  price: 0.025
+  currency: USD
+  period: per-use
+  unit: crop size 0–256
+- name: Sandbox 257–512
+  price_text: $0.05
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: crop size 257–512
+- name: Sandbox 513–1024
+  price_text: $0.10
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: crop size 513–1024
+- name: Sandbox 1025–2048
+  price_text: $0.20
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: crop size 1025–2048
+- name: Sandbox 2049+
+  price_text: $0.40
+  price: 0.4
+  currency: USD
+  period: per-use
+  unit: crop size 2049+
+rate_limit_statements:
+- Up to 200 free predictions every month
+- Unlimited parallel GPU capacity
