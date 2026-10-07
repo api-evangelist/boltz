@@ -197,6 +197,8 @@ apis:
   - type: Authentication
     url: authentication/boltz-authentication.yml
 common:
+- type: Plans
+  url: plans/boltz-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/boltz-capability-edges.yml
   name: Boltz Business Capability Map
